@@ -20,14 +20,15 @@ const render = function(data) {
   console.log(data);
 
   data.forEach(function(doc) {
-    // console.log(doc)
+    console.log(doc)
     $("#results").append(`
         <li class="media my-4">
             <img height="75" width="75" src="${doc.multimedia[2] ? 'https://static01.nyt.com/' + doc.multimedia[2].url : 'nyt.jpg'}" class="mr-3" alt="Article Image">
             <div class="media-body">
                 <h5 class="mt-0">
                 ${doc.headline.main}
-                <span class="badge badge-pill badge-info mr-1">${doc.word_count} Words</span>
+                <span class="badge badge-pill badge-info mr-1">${doc.pub_date.slice(0,doc.pub_date.indexOf('T'))}</span>
+                <span class="badge badge-pill badge-light mr-1">${doc.word_count} Words</span>
                 </h5>
                 <p>${doc.snippet}</p>
                 <p class="mb-0">Full article <a target="_blank" href="${doc.web_url}">here</a></p>
