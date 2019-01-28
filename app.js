@@ -8,10 +8,11 @@ $("#search").on("click", function(e) {
 
 $("#clear").on("click", function(e) {
   e.preventDefault();
-  $("#query").val(" ");
-  $("#begin_date").val(" ");
-  $("#end_date").val(" ");
-  $("#numRecords").val(" ");
+  $("#query").val("");
+  $("#begin_date").val("");
+  $("#end_date").val("");
+  $("#numRecords").val(1);
+  $('#results').empty();
 });
 
 const render = function(data) {
